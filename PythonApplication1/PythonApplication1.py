@@ -14,38 +14,40 @@ numero_saques = 0
 extrato = ""
 LIMITE_SAQUE = 3
 valor_saque = 0
+operacao_desejada = ""
+
 while True :
- operacao_desejada = input('''Selecione a operação desejada: 
+ operacao_desejada = input('''Selecione a operacao desejada: 
                                 Deposito (D)
                                 Extrato (E)
                                 Saque (S)
                                 Sair (SR)
                                 ''').lower()
- if  operacao_desejada == "D" :
-     deposito = float(input("Informe o valor que deseja depositar: R$"))
+ if  operacao_desejada == "d" :
+     deposito = float(input("Informe o valor que deseja depositar: "))
      saldo += deposito
      
- elif operacao_desejada == "S" :
+ elif operacao_desejada == "s" :
     if numero_saques < LIMITE_SAQUE:
-       saque = float(input("Informe o valor que deseja sacar: R$"))
+       saque = float(input("Informe o valor que deseja sacar: "))
        
        if saldo >= saque :
         saldo -= saque
         valor_saque += saldo
         numero_saques += 1
        else :
-    else :
-       print("Ocorreu um erro ao realizar seu saque. Verifique se o valor de saque está dentro de seu orçamento, e se ainda está dentro do limite de saque diário.")
- elif operacao_desejada == "E" :
+        print("Ocorreu um erro ao realizar seu saque. Verifique se o valor de saque esta dentro de seu orcamento, e se ainda esta dentro do limite de saque diario")
+ elif operacao_desejada == "e" :
     
-    print(f"Valor total dos saques: R${valor_saque}")
-    print(f"Seu saldo atual é de: R${saldo}")
+    print(f"Valor total dos saques: {valor_saque}")
+    print(f"Seu saldo atual e de: {saldo}")
     print(f"Quantidade de saques realizados: {numero_saques}")
+    break
     
- elif operacao_desejada == "SR" :
-    print("Volte sempre!")
+ elif operacao_desejada == "sr" :
+    print("Volte sempre")
     break
  
  else :
-   print("Operação inválida.")
+   print("Operacao invalida")
 
